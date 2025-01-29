@@ -4,7 +4,7 @@
 
 
 ## Basic Details
-**Name:**  sushanthi Raj<br />
+**Name:**  Sushanthi Raj<br />
 **College:** Dayananda Sagar College of Engineering<br />
 **Email Id:** sushanthiraj07@gmail.com<br />
 **GitHub Profile:** [S-raj07]https://github.com/S-Raj07/Samsung-riscv<br />
@@ -759,14 +759,82 @@ Address: 100d8
 The instruction is located at memory address 0x100d8.
 The encoded machine code would follow the 32-bit RISC-V I-type format based on the breakdown above.
 
+</details>
 
 
+***
 
 
+<details>
+  <summary><b>Task 4:</b>To Use the RISC-V Core Verilog Netlist and Testbench for Functional simulation experiment by analysing and verifying the Output Waveform in GTKWave simulator.</summary> 
 
+## 4. FUNCTIONAL SIMULATION
 
+### 4.1 About iverilog and gtkwave
+- Icarus Verilog is an implementation of the Verilog hardware description language.
+- GTKWave is a fully featured GTK+ v1. 2 based wave viewer for Unix and Win32 which reads Ver Structural Verilog Compiler generated AET files as well as standard Verilog VCD/EVCD files and allows their viewing.
 
+### PROCEDURES TO PERFORM FUNCTIONAL SIMULATION
 
+### 4.2 Installing iverilog and gtkwave
+
+- **For Ubuntu**
+
+ Open your terminal and type the following to install iverilog and GTKWave
+ ```
+ $   sudo apt get update
+ $   sudo apt get install iverilog gtkwave
+ ```
+
+- **To clone the repository and download the netlist files for simulation , enter the following commands in your terminal.**
+
+ ```
+ $ git clone https://github.com/vinayrayapati/iiitb_rv32i
+ $ cd iiitb_rv32i
+ ```
+- **To simulate and run the verilog code , enter the following commands in your terminal.**
+
+```
+$ iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
+$ ./iiitb_rv32i
+```
+- **To see the output waveform in gtkwave, enter the following commands in your terminal.**
+
+`$ gtkwave iiitb_rv32i.vcd`
+### 4.3 The output waveform
+
+ The output waveform showing the instructions performed in a 5-stage pipelined architecture.
+ 
+ Instruction 1:add r6,r2,r1
+ ![task4 add1 1](https://github.com/user-attachments/assets/7ea19585-e8f5-4341-9271-a585e736f730)
+
+Instruction 2:and 
+![task4 and](https://github.com/user-attachments/assets/9a4fe579-cfeb-4465-8815-13d1f9ae01ef)
+
+Instruction 3:beq
+![task4 sw](https://github.com/user-attachments/assets/522aa9f1-4060-442f-ba4f-48524235d87f)
+
+Instruction 4: lw
+![task4 sw](https://github.com/user-attachments/assets/d7820a03-4d37-4f4c-a434-8c85620d5c5b)
+
+Instruction 5: or
+![task4 or](https://github.com/user-attachments/assets/06127f48-3e07-464c-b25f-85c85e106108)
+
+Instruction 6: sub
+![task4 sub](https://github.com/user-attachments/assets/478b6503-9d1c-4d4b-b7b0-9af79e506c5d)
+
+Instruction 7: sw
+![task4 sw](https://github.com/user-attachments/assets/d25cfcbc-a826-4bab-b283-520fc0e9c2ec)
+
+Instruction 8: xor
+![task4 xor](https://github.com/user-attachments/assets/7fbba2d5-edab-4436-bb34-53fdc34e03ca)
+
+Output waveform:
+![task4 1 1](https://github.com/user-attachments/assets/e315972b-ee62-4de2-ab79-3db5ea2d5cb5)
+
+</details>
+
+***
 
 
 
