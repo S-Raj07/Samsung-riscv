@@ -1,3 +1,16 @@
+# VSDSquadron Mini Internship June_2024
+<img align="right" width="300" height="138" src="https://github.com/VijayN53/VSDSquadron_Mini_Internship/assets/106604062/368c7a8d-7891-4838-8b8f-f9634078b7fc"> VSDSquadron Mini Board is a RISC-V based Architecture and consists of 32-bit RISC-V Core ,3 Groups of GPIO pins(15 I/O ports),RV32EC instruction set and supports CH32V305FBP6 single-wire programming protocol and other various communication protocols<br />
+
+
+
+## Basic Details
+**Name:**  sushanthi Raj<br />
+**College:** Dayananda Sagar College of Engineering<br />
+**Email Id:** sushanthiraj07@gmail.com<br />
+**GitHub Profile:** [S-raj07]https://github.com/S-Raj07/Samsung-riscv<br />
+**Linkedin Profile:** https://www.linkedin.com/in/sushanthi-raj-a43779262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app<br />
+
+***
 RISC-V 
 
 RISC-V internship using VSDSquardron Mini is based on RISC-V architecture and uses open source in teaching students VLSI SOC design and RISC-V
@@ -10,7 +23,161 @@ Contribute to India’s semiconductor growth. Deepen expertise in RISC-V and VLS
 Acknowledgments Grateful to:
 Samsung Semiconductor India Research (SSIR) VLSI System Design (VSD) The entire RISC-V Mission 2025 team for this transformative experience.
 
-Task 3
+<details>
+<summary><b>Task 1:</b>The task is to install the necessary tools for this internship such as Ubuntu on VMBox, Visual C++ and write a sample C code and analysing RISC asssemby code for the sample C code</summary><br />
+  
+  **1.Installing Ubuntu on VMBox**<br />
+  After installing the tools then open the terminal on Ubuntu to type the command.<br />
+  ![Installing Ubuntu   VMBox](https://github.com/VijayN53/VSDSquadron_Mini_Internship/assets/106604062/51924514-846f-4fe7-8d96-2619dad511f0)
+
+  
+  **2.Command for Installing Leafpad**<br />
+  ```
+  $ sudo apt install leafpad
+  ```
+  
+  **3.Command for Opening Leafpad**<br />
+  ```
+  $ cd
+  $ leafpad filename.c &
+  ```
+  ![Sample_C_code]![task1 1](https://github.com/user-attachments/assets/a9c4919d-1fbf-4654-809f-433bb87348ca)
+
+
+  
+  **4.Command for Compiling and Analyzing the Output**<br />
+  ```
+  $ gcc filename.c
+  $ ./a.out
+  ```
+  ![Output of Sample code]![task1 riscv 1 1](https://github.com/user-attachments/assets/c4923d7e-bf30-42f9-8c18-738f6746ef8b)
+
+
+    
+  **5.Command for Compiling the Code using RISCV Compiler**<br />
+  ```
+  $ riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o filename.o filename.c
+  $ ls -ltr filename.o
+  ```
+  ![Installing RISC Compiler]![task1](https://github.com/user-attachments/assets/c18c45c1-ce22-491f-8583-1df3cd343521)
+
+  **6.Command to View the Assembly Code**<br />
+  ```
+  $ riscv64-unknown-elf-objdump -d filename.o //Gives bunch of Code
+  $ riscv64-unknown-elf-objdump -d filename.o | less // Gives Reduced Code
+  /main //to view the main function of the code
+  ```
+  ![Main Function Assembly code](https://github.com/VijayN53/VSDSquadron_Mini_Internship/assets/106604062/d925b284-359e-444e-a7bb-62dd9a135d06)![ricvfast task1](https://github.com/user-attachments/assets/790d3a6f-3f62-4a89-8201-5d5cb64073da)
+
+    
+  **7. Command to View the Assembly Code**<br />
+  ```
+  $ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o filename.o filename.c
+  $ riscv64-unknown-elf-objdump -d filename.o | less 
+  /main 
+  ```
+  ![Assembly code for ofast command]![task1 riscv 1 1](https://github.com/user-attachments/assets/9bde0f01-a9b5-4c5c-ba33-fdb23b8c01ec)
+![ricvfast task1](https://github.com/user-attachments/assets/642cc909-1bb8-4092-99de-e5a11713dac4)
+
+  
+</details>
+
+***
+
+
+<details>
+<summary><b>Task 2:</b> Running the SPIKE Simulation and observe the performance under the -O1 and -Ofast Compiler optimization flags.
+</summary><br />
+  **1.Sample C Code on LeafPad**<br />
+ 
+ ![Task 2](https://github.com/user-attachments/assets/e1cf0c8a-646f-454a-9817-cef7c006e169)
+
+ Sum of Integers from 1 to n
+<b>Debugging sum.o for O1</b>
+<pre><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
+![Task 2 for O1 command](https://github.com/user-attachments/assets/1b936003-fcff-4eaf-90c4-2fbdb765cfaf)
+
+ls -ltr sum.o
+spike pk sum.o
+spike -d pk sum.o</code></pre>
+<b>O1 assembly output</b>
+<pre>0000000000010184 &lt;main&gt;:
+   10184:       ff010113                addi    sp,sp,-16
+   10188:       00113423                sd      ra,8(sp)
+   1018c:       04600793                li      a5,70
+   10190:       fff7879b                addiw   a5,a5,-1
+   10194:       fe079ee3                bnez    a5,10190 &lt;main+0xc&gt;
+   10198:       00001637                lui     a2,0x1
+   1019c:       96f60613                addi    a2,a2,-1681 # 96f &lt;register_fini-0xf741&gt;
+   101a0:       04500593                li      a1,69
+   101a4:       00021537                lui     a0,0x21
+   101a8:       19050513                addi    a0,a0,400 # 21190 &lt;__clzdi2+0x48&gt;
+   101ac:       26c000ef                jal     ra,10418 &lt;printf&gt;
+   101b0:       00000513                li      a0,0
+   101b4:       00813083                ld      ra,8(sp)
+   101b8:       01010113                addi    sp,sp,16
+   101bc:       00008067                ret
+</pre>
+**2.Checking The Output**<br />
+ ![task 2 O1](https://github.com/user-attachments/assets/92121fc4-40b9-416c-813a-9dbc10b34ad8)
+
+<p>15 instructions for O1</p>
+<br>
+
+<br><br>
+<b>Debugging sum.o for Ofast</b>
+<pre><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum.o sum.c
+spike pk sum.o
+spike -d pk sum.o</code></pre>
+
+![task 2](https://github.com/user-attachments/assets/905deefe-5f77-4dd6-b5f2-367dcedd37a4)
+
+<b>Ofast assembly output</b>
+<pre>00000000000100b0 &lt;main&gt;:
+   100b0:       00001637                lui     a2,0x1
+   100b4:       00021537                lui     a0,0x21
+   100b8:       ff010113                addi    sp,sp,-16
+   100bc:       96f60613                addi    a2,a2,-1681 # 96f &lt;main-0xf741&gt;
+   100c0:       04500593                li      a1,69
+   100c4:       18050513                addi    a0,a0,384 # 21180 &lt;__clzdi2+0x44&gt;
+   100c8:       00113423                sd      ra,8(sp)
+   100cc:       340000ef                jal     ra,1040c &lt;printf&gt;
+   100d0:       00813083                ld      ra,8(sp)
+   100d4:       00000513                li      a0,0
+   100d8:       01010113                addi    sp,sp,16
+   100dc:       00008067                ret
+</pre>
+<p>12 instructions for Ofast</p>
+<br>
+</details>
+
+<details>
+<b>Task 2 Example:</b>To Write a Simple C code for the project "Area of a square" and to analyze instructions in  assembly code using RISC-V Compiler by following the same procedures in the task1<br />
+
+  **1.Sample C Code on LeafPad**<br />
+ 
+  ![1 Simple C code]![task 2-own example](https://github.com/user-attachments/assets/e4160c27-2c98-4b0c-a097-6b3066ce59c4)
+
+
+**2.Checking The Output**<br />
+  > The Output Clock signal is produced in the Output and verified for O1 command.<br />
+  ![2 Output for the  C code]![task 2-own eg O1](https://github.com/user-attachments/assets/4cc3d991-f8b9-4b15-8b57-621d9d329060)
+
+
+
+**4.Run the code using Ofast Command**<br />
+  > Compiling the C code on RISC-V compiler using the below shown command.<br />
+  ![6 Ofast cmnd to run code on RISC-V]![task 2-own eg Ofast](https://github.com/user-attachments/assets/cf698040-3395-4199-af55-aea72bca513c)
+
+
+ </details>
+
+ 
+ ***
+
+ 
+<details>
+  <summary><b>Task 3:</b>Identify instruction type of all the instructions of the Object dump with its exact 32 bits instruction code in the desired instruction type format.</summary><br />
 
 Instruction 1
 
