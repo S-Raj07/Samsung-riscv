@@ -835,11 +835,41 @@ Output waveform:
 </details>
 
 ***
+<details>
+  <summary><b>Task 5:</b>Automatic Light System using VSDSquadron</summary> 
+
+The Automatic Light System using VSDSquadron is designed to control lighting based on environmental conditions such as motion, ambient light levels, and time of day. The system leverages sensors and microcontrollers to automate lighting, improving energy efficiency and convenience.
+
+#Components Required
+
+VSDSquadron Mini Board
+
+IR Sensor
+
+LEDs
+
+Bread Board
+
+USB Cable
+
+Jumper Wires
 
 
+#pin connections
 
+![pin](https://github.com/user-attachments/assets/c7598322-60ec-47f3-ae55-2b5812af8b11)
 
+#Applications
 
+Home automation
+
+Smart offices
+
+Street lighting
+
+Industrial automation
+
+Security lighting
 
 
 
