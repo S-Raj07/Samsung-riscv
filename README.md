@@ -871,9 +871,21 @@ Industrial automation
 
 Security lighting
 
+#Circuit diagram
+
+![task5 circuit diagram](https://github.com/user-attachments/assets/086db0ab-2ce7-4533-a2a5-e39ee7fb52ab)
+
+</details>
+
+***
+<details>
+  <summary><b>Task 6:</b> Working of Automatic Light System using VSDSquadron</summary> 
+
+#Working vedio
 
 
 
+https://github.com/user-attachments/assets/51a92225-eab3-4083-a157-272e42c0cc7d
 
 
 
